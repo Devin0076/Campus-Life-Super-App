@@ -1,0 +1,1 @@
+console.log("CampusLife Hub is live!");
