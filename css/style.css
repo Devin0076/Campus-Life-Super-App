@@ -62,3 +62,9 @@ footer {
   font-size: 0.9rem;
 }
 
+/* Map image sizing to match other cards */
+.map-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
