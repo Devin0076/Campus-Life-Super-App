@@ -102,3 +102,61 @@ html {
   transform: scale(1.05);
   background-color: #0056b3;
 }
+
+
+/* Card hover animation */
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Button hover effect */
+.btn-primary:hover {
+  background-color: #004080;
+  border-color: #004080;
+}
+
+/* Section padding consistency */
+section.content {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+/* Footer tweaks */
+footer {
+  font-size: 0.9rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .card img {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  .form-control.w-50 {
+    width: 90% !important;
+  }
+}
+
+/* --- Map Image Fix --- */
+.map-img, 
+.content img[alt="Interactive Campus Map"] {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 20px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
