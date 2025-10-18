@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Cummings Dining Hall",
+    "hours": "7:00 AM - 8:00 PM",
+    "description": "Buffet-style dining hall open daily for breakfast, lunch, and dinner.",
+    "image": "images/icphoto2.jpg"
+  },
+  {
+    "name": "Campus Starbucks",
+    "hours": "M-Th: 7:30 - 3:00 PM & 7-10 PM, F: 7:30 - 3:00 PM",
+    "description": "Grab a latte, tea, or pastry to start your day or refuel between classes.",
+    "image": "images/icphoto4.jpg"
+  },
+  {
+    "name": "College Ave Subs (Mondos)",
+    "hours": "11:00 AM - 4:00 PM",
+    "description": "A chill spot for sandwiches, smoothies, and study sessions.",
+    "image": "images/subs.jpg"
+  }
+]

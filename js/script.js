@@ -45,30 +45,35 @@ function loadEvents() {
 }
 
 
-// DINING
+// Load Dining Data from Local API: dining.json
 function loadDining() {
-    const container = document.getElementById("dining-container");
-    container.innerHTML = `
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <img src="images/icphoto2.jpg" class="card-img-top" alt="Cummings Dining Hall">
-                <div class="card-body">
-                    <h5 class="card-title">Cummings Dining Hall</h5>
-                    <p class="card-text">Buffet-style meals open daily — breakfast, lunch, and dinner.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <img src="images/icphoto4.jpg" class="card-img-top" alt="Campus Starbucks">
-                <div class="card-body">
-                    <h5 class="card-title">Campus Starbucks</h5>
-                    <p class="card-text">Grab your morning latte or a snack between classes!</p>
-                </div>
-            </div>
-        </div>
-    `;
+    const container = document.querySelector("#dining-container");
+    container.innerHTML = "<p>Loading dining options...</p>";
+
+    fetch("data/dining.json")
+        .then(response => response.json())
+        .then(diningOptions => {
+            container.innerHTML = "";
+            diningOptions.forEach(place => {
+                const card = document.createElement("div");
+                card.classList.add("col-md-4");
+                card.innerHTML = `
+                    <div class="card shadow-sm h-100">
+                        <img src="${place.image}" class="card-img-top" alt="${place.name}">
+                        <div class="card-body">
+                            <h5 class="card-title">${place.name}</h5>
+                            <p class="card-text">${place.description}</p>
+                            <p class="text-muted">Hours: ${place.hours}</p>
+                        </div>
+                    </div>`;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => {
+            container.innerHTML = `<p class="text-danger">Error loading dining data: ${error.message}</p>`;
+        });
 }
+
 
 // MAP
 function activateMapPreview() {
