@@ -4,26 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Campus Events - CampusLife Hub</title>
-
-    <!--Bootstrap CSS-->
-    <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-    />
-
-    <!--Custom CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <!--Navbar-->
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html">CampusLife Hub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
@@ -35,28 +26,28 @@
         </div>
     </nav>
 
-    <!--Main Content-->
+    <!-- Main Content -->
     <section class="content text-center py-5">
         <div class="container">
             <h1 class="mb-4">Campus Events</h1>
             <p>Stay up to date with all the latest happenings on campus!</p>
-            
-            <!--Search Bar-->
-            <input type="text" id="event-search" class="form-control mb-4" placeholder="Search events..." />
 
-            <!--Events List-->
-            <div id = "events-container" class = "row justify-content-center"></div>
+            <!-- Search Bar -->
+            <div class="d-flex justify-content-center mb-4">
+                <input type="text" id="event-search" class="form-control w-50" placeholder="Search events..." />
+            </div>
+
+            <!-- Cards go here -->
+            <div id="events-container" class="row g-4"></div>
         </div>
     </section>
 
-    <!--Footer-->
+    <!-- Footer -->
     <footer class="bg-primary text-white text-center py-3 mt-5">
         <p class="mb-0">&copy; 2025 CampusLife Hub. Made by Devin.</p>
     </footer>
 
-    <!--Bootstrap JS-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!--Custom JS-->
     <script src="js/script.js"></script>
 </body>
 </html>
