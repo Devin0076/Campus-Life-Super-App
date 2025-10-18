@@ -93,3 +93,31 @@ function activateMapPreview() {
 
     document.querySelector(".content .container").appendChild(mapImg);
 }
+
+// --- Search Functionality for Events and Dining ---
+
+// Events search
+const eventSearch = document.getElementById("event-search");
+if (eventSearch) {
+  eventSearch.addEventListener("input", () => {
+    const query = eventSearch.value.toLowerCase();
+    const cards = document.querySelectorAll("#events-container .card");
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(query) ? "" : "none";
+    });
+  });
+}
+
+// Dining search
+const diningSearch = document.getElementById("dining-search");
+if (diningSearch) {
+  diningSearch.addEventListener("input", () => {
+    const query = diningSearch.value.toLowerCase();
+    const cards = document.querySelectorAll("#dining-container .card");
+    cards.forEach(card => {
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(query) ? "" : "none";
+    });
+  });
+}
