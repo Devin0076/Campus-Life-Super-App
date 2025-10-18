@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Homecoming Parade",
+    "date": "2025-10-25",
+    "description": "Join us for the annual parade downtown and cheer for your team!",
+    "image": "images/icphoto5.jpg"
+  },
+  {
+    "title": "Follies Talent Show",
+    "date": "2025-10-28",
+    "description": "Showcase your talent at the Follies Talent Show in the student center!",
+    "image": "images/icphoto6.jpg"
+  },
+  {
+    "title": "Women's Basketball Game",
+    "date": "2025-11-02",
+    "description": "Come support the Lady Blues as they face their rivals on home court!",
+    "image": "images/icphoto7.jpg"
+  }
+]

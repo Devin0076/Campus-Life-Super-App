@@ -15,39 +15,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// EVENTS
+// Load Events from Local API: events.json
 function loadEvents() {
-    const container = document.getElementById("events-container");
-    container.innerHTML = `
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <img src="images/icphoto5.jpg" class="card-img-top" alt="Homecoming Parade">
-                <div class="card-body">
-                    <h5 class="card-title">Homecoming Parade</h5>
-                    <p class="card-text">Join us for the annual parade and cheer for your team!</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <img src="images/icphoto6.jpg" class="card-img-top" alt="Follies Talent Show">
-                <div class="card-body">
-                    <h5 class="card-title">Follies Talent Show</h5>
-                    <p class="card-text">Come showcase your talents at the Follies Talent Show!</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <img src="images/icphoto7.jpg" class="card-img-top" alt="Women's Basketball Game">
-                <div class="card-body">
-                    <h5 class="card-title">Women's Basketball Game</h5>
-                    <p class="card-text">Come cheer on the Lady Blues in their game!</p>
-                </div>
-            </div>
-        </div>
-    `;
+    const container = document.querySelector("#events-container");
+    container.innerHTML = "<p>Loading events...</p>";
+
+    fetch("data/events.json")
+        .then(response => response.json())
+        .then(events => {
+            container.innerHTML = "";
+            events.forEach(event => {
+                const card = document.createElement("div");
+                card.classList.add("col-md-4");
+                card.innerHTML = `
+                    <div class="card shadow-sm h-100">
+                        <img src="${event.image}" class="card-img-top" alt="${event.title}">
+                        <div class="card-body">
+                            <h5 class="card-title">${event.title}</h5>
+                            <p class="card-text">${event.description}</p>
+                            <p class="text-muted">${event.date}</p>
+                        </div>
+                    </div>`;
+                container.appendChild(card);
+            });
+        })
+        .catch(error => {
+            container.innerHTML = `<p class="text-danger">Error loading events: ${error.message}</p>`;
+        });
 }
+
 
 // DINING
 function loadDining() {
