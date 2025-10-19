@@ -77,7 +77,13 @@ function loadDining() {
 
 // MAP
 function activateMapPreview() {
-    const alertBox = document.querySelector(".alert-info");
+    const mapContainer = document.querySelector(".content .container");
+
+    const alertBox = document.createElement("div");
+    alertBox.className = "alert alert-info mt-3";
+    alertBox.textContent = "Hover over the map to highlight key areas!";
+    mapContainer.appendChild(alertBox);
+
     const mapImg = document.createElement("img");
     mapImg.src = "images/icmap.jpg";
     mapImg.alt = "Interactive Campus Map";
@@ -92,8 +98,9 @@ function activateMapPreview() {
         alertBox.textContent = "Hover over the map to highlight key areas!";
     });
 
-    document.querySelector(".content .container").appendChild(mapImg);
+    mapContainer.appendChild(mapImg);
 }
+
 
 // --- Search Functionality for Events and Dining ---
 
